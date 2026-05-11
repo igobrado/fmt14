@@ -1,0 +1,138 @@
+# Configured for clang-format-9
+# If You want to test some setting, try https://zed0.co.uk/clang-format-configurator/
+# Integration helpers, see here: https://clang.llvm.org/docs/ClangFormat.html
+
+Language:        Cpp
+BasedOnStyle:    Google
+AccessModifierOffset: -4
+AlignAfterOpenBracket: AlwaysBreak
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignConsecutiveMacros: true
+AlignEscapedNewlines: Left
+AlignOperands:   true # TODO: AlignAfterOperator, not suported in v9
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: false # TODO: Empty, not supported in v9
+AllowAllArgumentsOnNextLine: false
+AllowAllConstructorInitializersOnNextLine: false
+AllowShortCaseLabelsOnASingleLine: false
+#AllowShortEnumsOnASingleLine: false # not supported in v9
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+#AllowShortLambdasOnASingleLine: None # not supported in v9
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterDefinitionReturnType: None # Deprecated in v11
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: true # TODO: Yes, not suported in v9
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: false # ZST: There are a lot of namespaces in E³ so to keep them pompact "false" is used
+  AfterObjCDeclaration: false
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  #BeforeLambdaBody: true # Not supported in v9
+  #BeforeWhile: false # not supported in v9
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakAfterJavaFieldAnnotations: false
+#BreakBeforeInheritanceComma: false # not supported in v11
+BreakStringLiterals: false
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeComma
+BreakInheritanceList: BeforeComma
+ColumnLimit: 120
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 0
+ContinuationIndentWidth: 4
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false
+IndentCaseLabels: true
+IncludeBlocks: Merge
+IndentWidth:     4
+IndentWrappedFunctionNames: true
+DisableFormat: false
+FixNamespaceComments: true
+ForEachMacros:
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+  - std::for_each
+IncludeCategories:
+  - Regex:           '^<(gmock|gtest|Poco|rapidjson|eb)\/([A-Z0-9.\/-_])+'
+    Priority:        4
+  - Regex:           '^<([A-Z0-9\/-_])+>'
+    Priority:        3
+  - Regex:           '^<.*/.*\.hpp>'
+    Priority:        5
+  - Regex:           '^<.*.h>'
+    Priority:        1
+  - Regex:           '^<.*/.*\.h>'
+    Priority:        2
+  - Regex:           '^".*/.*\.hpp"'
+    Priority:        6
+  - Regex:           '^"([A-Z0-9.-_])+"'
+    Priority:        7
+IncludeIsMainRegex: '(_test)?$'
+# IndentCaseBlocks: false # not supported in v9
+# IndentExternBlock: AfterExternBlock # not supported in v9
+# IndentGotoLabels: false # Do not use GOTO ever! setting this to false will make them visible, not supported in v9
+IndentPPDirectives: AfterHash
+KeepEmptyLinesAtTheStartOfBlocks: false
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+PointerAlignment: Left
+RawStringFormats:
+  - Language: TextProto
+    BasedOnStyle: google
+    Delimiters: - pb
+ReflowComments: true
+SortIncludes: true
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+# SpaceBeforeSquareBrackets: false # not supported in v9
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInAngles:  false
+SpacesInCStyleCastParentheses: false
+# SpacesInConditionalStatement: false
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+Standard:        Cpp11
+TabWidth:        4
+UseTab:          Never
+
+PenaltyBreakAssignment: 100
+PenaltyBreakBeforeFirstCallParameter: 10
+PenaltyBreakComment: 10
+PenaltyBreakFirstLessLess: 1 # The penalty for breaking before the first <<
+PenaltyBreakString: 10000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 2000000
+PenaltyReturnTypeOnItsOwnLine: 999999999
